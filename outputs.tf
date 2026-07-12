@@ -1,3 +1,7 @@
+output "log_analytics_linked_storage_accounts_id" {
+  description = "Map of id values across all log_analytics_linked_storage_accounts, keyed the same as var.log_analytics_linked_storage_accounts"
+  value       = { for k, v in azurerm_log_analytics_linked_storage_account.log_analytics_linked_storage_accounts : k => v.id }
+}
 output "log_analytics_linked_storage_accounts_data_source_type" {
   description = "Map of data_source_type values across all log_analytics_linked_storage_accounts, keyed the same as var.log_analytics_linked_storage_accounts"
   value       = { for k, v in azurerm_log_analytics_linked_storage_account.log_analytics_linked_storage_accounts : k => v.data_source_type }
